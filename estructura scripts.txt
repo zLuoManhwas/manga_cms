@@ -1,0 +1,35 @@
+Backend (PHP, MySQL)
+Script de Conexión a la Base de Datos:
+
+db_connect.php: Gestiona la conexión a la base de datos MySQL.
+Scripts de Gestión de Mangas:
+
+add_manga.php: Permite añadir un nuevo manga.
+edit_manga.php: Permite editar la información de un manga existente.
+delete_manga.php: Elimina un manga del sistema.
+Scripts de Gestión de Capítulos y Páginas:
+
+add_chapter.php: Añade nuevos capítulos a un manga.
+edit_chapter.php: Edita capítulos existentes.
+delete_chapter.php: Elimina capítulos.
+Scripts de Utilidad:
+
+upload.php: Maneja la carga de imágenes o archivos para los capítulos.
+search.php: Proporciona funcionalidad de búsqueda dentro del sitio.
+Frontend (HTML, CSS, JavaScript)
+Páginas Principales:
+
+index.html: Página de inicio que muestra una lista de mangas.
+manga_detail.html: Detalles de un manga específico, incluyendo capítulos.
+Páginas de Administración (solo accesibles por ti):
+
+admin_dashboard.html: Panel de control para gestionar mangas.
+add_manga.html: Formulario para añadir un nuevo manga.
+edit_manga.html: Formulario para editar un manga existente.
+Scripts JavaScript:
+
+main.js: Funciones JavaScript generales para la interactividad del sitio, como la navegación entre páginas.
+Estilos (CSS):
+
+style.css: Hoja de estilos principal para el sitio web.
+responsive.css: Estilos para hacer que el sitio sea responsive.

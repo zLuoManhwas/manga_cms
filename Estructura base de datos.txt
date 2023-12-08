@@ -1,0 +1,68 @@
+Estructura de la Base de Datos
+Mangas:
+
+id: INT, PRIMARY KEY, AUTO_INCREMENT
+title: VARCHAR, título del manga
+description: TEXT, descripción del manga
+author: VARCHAR, autor del manga
+genre: VARCHAR, género(s) del manga
+status: VARCHAR, estado del manga (ej. en curso, completado)
+cover_image: VARCHAR, URL o ruta de la imagen de portada
+Capítulos:
+
+id: INT, PRIMARY KEY, AUTO_INCREMENT
+manga_id: INT, FOREIGN KEY referenciando id de Mangas
+title: VARCHAR, título del capítulo
+number: INT, número del capítulo
+upload_date: DATE, fecha de publicación del capítulo
+Páginas:
+
+id: INT, PRIMARY KEY, AUTO_INCREMENT
+chapter_id: INT, FOREIGN KEY referenciando id de Capítulos
+page_number: INT, número de la página dentro del capítulo
+Imágenes (nueva tabla):
+
+id: INT, PRIMARY KEY, AUTO_INCREMENT
+page_id: INT, FOREIGN KEY referenciando id de Páginas
+image_path: VARCHAR, ruta de la imagen
+order: INT, orden de la imagen en la página (si hay más de una imagen por página)
+
+----------------------------------------------------------------------------------------
+
+-- Crear tabla 'mangas'
+CREATE TABLE mangas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    author VARCHAR(255),
+    genre VARCHAR(255),
+    status VARCHAR(100),
+    cover_image VARCHAR(255)
+);
+
+-- Crear tabla 'capitulos'
+CREATE TABLE capitulos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    manga_id INT NOT NULL,
+    title VARCHAR(255),
+    number INT,
+    upload_date DATE,
+    FOREIGN KEY (manga_id) REFERENCES mangas(id)
+);
+
+-- Crear tabla 'paginas'
+CREATE TABLE paginas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    chapter_id INT NOT NULL,
+    page_number INT,
+    FOREIGN KEY (chapter_id) REFERENCES capitulos(id)
+);
+
+-- Crear tabla 'imagenes'
+CREATE TABLE imagenes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    page_id INT NOT NULL,
+    image_path VARCHAR(255),
+    `order` INT,
+    FOREIGN KEY (page_id) REFERENCES paginas(id)
+);

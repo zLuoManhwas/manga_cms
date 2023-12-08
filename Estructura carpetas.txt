@@ -1,0 +1,25 @@
+mi_manga_cms/
+│
+├── public/  (accesible al público)
+│   ├── css/
+│   │   ├── style.css
+│   │   └── responsive.css
+│   ├── js/
+│   │   └── main.js
+│   ├── images/  (para almacenar imágenes)
+│   ├── index.html
+│   ├── manga_detail.html
+│   ├── admin_dashboard.html
+│   ├── add_manga.html
+│   └── edit_manga.html
+│
+└── private/  (para scripts PHP y lógica del servidor)
+    ├── db_connect.php
+    ├── add_manga.php
+    ├── edit_manga.php
+    ├── delete_manga.php
+    ├── add_chapter.php
+    ├── edit_chapter.php
+    ├── delete_chapter.php
+    ├── upload.php
+    └── search.php
